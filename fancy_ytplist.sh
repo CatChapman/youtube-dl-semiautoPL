@@ -22,7 +22,7 @@ echo "#!/bin/bash" >> "$dir""$script"
 #creating the update.sh script in the desired directory
 #have to put quotes around the variables when called otherwise it complains
 
-echo "youtube-dl -f ‘bestaudio’ -i -o '%(playlist_index)s - %(title)s.%(ext)s' https://www.youtube.com/playlist?list=${1}" >> "$dir""$script"
+echo "youtube-dl -f ‘bestaudio’ -i -o '%(playlist_index)s - %(title)s.%(ext)s' ${1}" >> "$dir""$script"
 #finalizing update.sh
 
 chmod +x "$dir""$script"
