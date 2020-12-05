@@ -19,7 +19,6 @@ rm tempID.txt
 #removing the temp file otherwise things get wonky.
 
 echo "#!/bin/bash" >> "$dir""$script"
-
 #creating the update.sh script in the desired directory
 #have to put quotes around the variables when called otherwise it complains
 
