@@ -47,6 +47,6 @@ please don't use this for illegal or nefarious purposes. that wouldn't be very C
 
 # special thanks
 
-shoutouts to G for helping with isolating the playlist name. you are Very Cash Money and this script would not work without your Cash Money ways.
+shoutouts to G for helping with isolating the playlist name and subsequently the approrpiate directory name. you are Very Cash Money and this script would not work without your Cash Money ways.
 
 # please be Cash Money with this script. be a good citizen and obey the law.
