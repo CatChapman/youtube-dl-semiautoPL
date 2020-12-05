@@ -3,7 +3,7 @@ script for OS X (and Linux too? untested, YMMV) that uses youtube-dl https://git
 
 # to use
 
-**you need youtube-dl
+**you need youtube-dl**
 
 you also need bash
 
