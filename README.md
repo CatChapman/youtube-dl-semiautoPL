@@ -4,7 +4,9 @@ script for OS X (and Linux too? untested, YMMV) that uses youtube-dl https://git
 # to use
 
 you need youtube-dl
+
 you also need bash
+
 I've only tested this on OS X
 
 YOU NEED TO DOWNLOAD BOTH fancy_ytplist.sh AND getpldir.sh!
