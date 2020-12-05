@@ -7,6 +7,8 @@ you need youtube-dl
 you also need bash
 I've only tested this on OS X
 
+YOU NEED TO DOWNLOAD BOTH fancy_ytplist.sh AND getpldir.sh!
+
 # HOW to use
 
 save the script in the directory you are happy with having subdirectories of playlists' content. e.g. "~/Youtube\ Playlists/"
