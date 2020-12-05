@@ -3,6 +3,7 @@
 youtube-dl -f ‘bestaudio’ -i -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' ${1}
 
 youtube-dl -s ${1} >> tempID.txt
+#silent youtube-dl dump into a tempID.txt file, for use by getpldir.sh to extract the playlist name and subsequently the directory name
 
 dir=$(./getpldir.sh)
 #using "update.sh" as a var seems to play nicer, idk if it's really necessary but...?
