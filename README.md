@@ -19,7 +19,7 @@ YOU NEED TO DOWNLOAD BOTH fancy_ytplist.sh AND getpldir.sh!
 
 save the script in the directory you are happy with having subdirectories of playlists' content. e.g. "~/Youtube\ Playlists/"
 
-make sure the script is executable (chmod +x fancy_ytplist.sh)
+make sure the scripts are executable (chmod +x fancy_ytplist.sh; chmod +x getpldir.sh)
 
 run as: ./fancy_ytplist.sh [playlist URL OR ID here]
 
