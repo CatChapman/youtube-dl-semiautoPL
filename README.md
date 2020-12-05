@@ -45,4 +45,8 @@ I wrote this over the course of about a day and I can't claim any support for it
 
 please don't use this for illegal or nefarious purposes. that wouldn't be very Cash Money of you. please be Cash Money with this script. please only use this script to download content whose copyright you will not be infringing upon by downloading it for offline use.
 
+# special thanks
+
+shoutouts to G for helping with isolating the playlist name. you are Very Cash Money and this script would not work without your Cash Money ways.
+
 # please be Cash Money with this script. be a good citizen and obey the law.
