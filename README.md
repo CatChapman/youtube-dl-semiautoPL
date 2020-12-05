@@ -31,7 +31,7 @@ e.g.
 
 let's say you run this script within "~/Youtube\ Playlists/" for a playlist titled "This is a Playlist"
 
-a folder titled "This\ is\ a\ Playlist/" will be created and populated with the contents of said playlist
+a folder titled "This\ is\ a\ Playlist/" will be created within "~/Youtube\ Playlists/" and populated with the contents of said playlist, indexed by position in the playlist. so #1 on the list would be 01 - [insert title here], #1 would be 02 - [insert title here] and so on. the files will be .webm, but if you know youtube-dl you can change the format.
 
 an update.sh script will also populate that folder
 
