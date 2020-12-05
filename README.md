@@ -35,7 +35,7 @@ a folder titled "This\ is\ a\ Playlist/" will be created within "~/Youtube\ Play
 
 an update.sh script will also populate that folder
 
-if This is a Playlist updates, simply run update.sh within "This\ is\ a\ Playlist/" to updaye the content of your "This\ is\ a\ Playlist/" folder.
+if This is a Playlist updates, simply run update.sh within "This\ is\ a\ Playlist/" to update the content of your "This\ is\ a\ Playlist/" folder.
 
 if you run update.sh outside of that folder, it will still download the playlist, but it will be redundant and download everything all over again. which, hey, you do you.
 
