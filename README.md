@@ -17,6 +17,8 @@ YOU NEED TO DOWNLOAD BOTH fancy_ytplist.sh AND getpldir.sh!
 
 # HOW to use
 
+you run this from your terminal application. on OS X it's typically Terminal.app.
+
 save the script in the directory you are happy with having subdirectories of playlists' content. e.g. "~/Youtube\ Playlists/"
 
 make sure the scripts are executable (chmod +x fancy_ytplist.sh; chmod +x getpldir.sh)
