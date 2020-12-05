@@ -13,11 +13,17 @@ script="update.sh"
 
 dir="$dir/"
 #have to put the trailing / in the var itself otherwise it complains
+#this notation is necessary for playlists containing more than one word
 
 rm tempID.txt
 #removing the temp file otherwise things get wonky.
 echo "#!/bin/bash" >> "$dir""$script"
+
+#creating the update.sh script in the desired directory
 #have to put quotes around the variables when called otherwise it complains
 
 echo "youtube-dl -f ‘bestaudio’ -i -o '%(playlist_index)s - %(title)s.%(ext)s' https://www.youtube.com/playlist?list=${1}" >> "$dir""$script"
+#finalizing update.sh
+
 chmod +x "$dir""$script"
+#making update.sh executable
