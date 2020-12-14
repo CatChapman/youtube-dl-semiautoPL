@@ -17,7 +17,7 @@ rm tempID.txt
 
 #staging for m3u playlist generation
 now=$(date "+%Y-%m-%d") #timestamps are cool and good
-cd $dir #changing to newly created directory because it's simpler this way
+cd "$dir" #changing to newly created directory because it's simpler this way
 
 ls | grep -v .sh | grep -v .m3u >> $now"_"$plname.m3u #ls piped thru inverse grep works better than plain ls I guess? macOS ships with BSD ls, not GNU ls; no inverse filter with BSD ls.
 
