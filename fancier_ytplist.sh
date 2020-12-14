@@ -55,7 +55,7 @@ else
   echo "$script has been written in $(pwd). Run $script within $(pwd) to update the files."
 fi
 
-#this is sloppy but I didn't go to computer college, sorry :)
+#this is probably sloppy but I didn't go to computer college, sorry :)
 
 #shoutouts:
 # https://stackoverflow.com/questions/226703/how-do-i-prompt-for-yes-no-cancel-input-in-a-linux-shell-script
