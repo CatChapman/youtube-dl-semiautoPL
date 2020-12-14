@@ -8,7 +8,7 @@ dir=$(./getpldir.sh)
 #using "update.sh" as a var seems to play nicer, idk if it's really necessary but...?
 script="update.sh"
 #have to put the trailing / in the var itself otherwise it complains
-plname=$dir
+plname=$dir #duplicating this var before I add the slash so I can use it to name the m3u file
 dir="$dir/"
 
 
