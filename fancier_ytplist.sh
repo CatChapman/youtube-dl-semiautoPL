@@ -16,7 +16,7 @@ rm tempID.txt
 #have to put quotes around the variables when called otherwise it complains
 
 #staging for m3u playlist generation
-now=$(date "+%Y-%m-%d") #timestamps are cool and good
+now=$(date "+%Y-%m-%d-%M") #timestamps are cool and good
 cd "$dir" #changing to newly created directory because it's simpler this way
 
 ls | grep -v .sh | grep -v .m3u >> "$now"_"$plname".m3u #ls piped thru inverse grep works better than plain ls I guess? macOS ships with BSD ls, not GNU ls; no inverse filter with BSD ls.
@@ -32,7 +32,7 @@ if test -f "$script"; then
       Yes ) rm $script;
       echo "#!/bin/bash" >> "$script";
       echo "youtube-dl -f ‘bestaudio’ -i -o '%(playlist_index)s - %(title)s.%(ext)s' ${1}" >> "$script";
-      echo "now=\$(date \"+%Y-%m-%d\")" >> "$script";
+      echo "now=\$(date \"+%Y-%m-%d-%M\")" >> "$script";
       echo "ls | grep -v .sh | grep -v .m3u >> \$now\_\""$plname"\".m3u" >> "$script";
       #so now the update script will also build a new playlist with each run
       chmod +x "$script";
@@ -48,7 +48,7 @@ else
   echo "#!/bin/bash" >> "$script"
 
   echo "youtube-dl -f ‘bestaudio’ -i -o '%(playlist_index)s - %(title)s.%(ext)s' ${1}" >> "$script"
-  echo "now=\$(date \"+%Y-%m-%d\")" >> "$script"
+  echo "now=\$(date \"+%Y-%m-%d-%M\")" >> "$script"
   echo "ls | grep -v .sh | grep -v .m3u >> \$now\_\""$plname"\".m3u" >> "$script"
   #so now the update script will also build a new playlist with each run
   chmod +x "$script"
