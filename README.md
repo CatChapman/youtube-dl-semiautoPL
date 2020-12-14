@@ -8,11 +8,11 @@ script for OS X (and Linux too? untested, YMMV) that uses youtube-dl https://git
 
 # to use
 
-**you need youtube-dl** https://github.com/ytdl-org/youtube-dl
+**you need youtube-dl version 2020-12-02** https://github.com/ytdl-org/youtube-dl/releases/tag/2020.12.02
 
-**you need youtube-dl** https://github.com/ytdl-org/youtube-dl
+**you need youtube-dl version 2020-12-02** https://github.com/ytdl-org/youtube-dl/releases/tag/2020.12.02
 
-**you need youtube-dl** https://github.com/ytdl-org/youtube-dl
+**you need youtube-dl version 2020-12-02** https://github.com/ytdl-org/youtube-dl/releases/tag/2020.12.02
 
 you also need bash
 
