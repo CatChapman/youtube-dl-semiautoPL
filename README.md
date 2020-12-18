@@ -1,6 +1,6 @@
 # youtube-dl-semiautoPL AKA fancy_ytplist.sh
 
-### as on 2020-12-18, youtube-dl version 2020-12-14 seems to work with this script once again. huzzah!
+### as of 2020-12-18, youtube-dl version 2020-12-14 seems to work with this script once again. huzzah!
 
 # ***NEW! IMPROVED!*** fancier_ytplist.sh is even fancier! better update.sh handling (checks for existing update.sh in target directory and prompts user on how to proceed), and also includes automagic m3u playlist generation. fancy living!
 
