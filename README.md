@@ -1,18 +1,17 @@
 # youtube-dl-semiautoPL AKA fancy_ytplist.sh
-## apparently, this only works for youtube-dl 2020-12-02 and possibly earlier. sorry about that.
-### since youtube-dl is public domain, I'm hosting the source code of the 2020-12-02 version here. this isn't so much a fork as it is me simply re-hosting for conveniece's sake.
+
+### as on 2020-12-18, youtube-dl version 2020-12-14 seems to work with this script once again. huzzah!
 
 # ***NEW! IMPROVED!*** fancier_ytplist.sh is even fancier! better update.sh handling (checks for existing update.sh in target directory and prompts user on how to proceed), and also includes automagic m3u playlist generation. fancy living!
 
 script for OS X (and Linux too? untested, YMMV) that uses youtube-dl https://github.com/ytdl-org/youtube-dl to download a playlist as audio in its own folder (named after the playlist title), forcing highest quality, and automagically producing an update script to use within the playlist's folder so you can update the content at your leisure. handy if a playlist updates regularly and you want to save the content for offline listening. public domain music and/or lectures and stuff like that.
 
 # to use
+**you need youtube-dl** https://github.com/ytdl-org/youtube-dl/
 
-**you need youtube-dl version 2020-12-02** https://github.com/ytdl-org/youtube-dl/releases/tag/2020.12.02
+**you need youtube-dl** https://github.com/ytdl-org/youtube-dl/
 
-**you need youtube-dl version 2020-12-02** https://github.com/ytdl-org/youtube-dl/releases/tag/2020.12.02
-
-**you need youtube-dl version 2020-12-02** https://github.com/ytdl-org/youtube-dl/releases/tag/2020.12.02
+**you need youtube-dl** https://github.com/ytdl-org/youtube-dl/
 
 you also need bash
 
@@ -86,7 +85,7 @@ if you run update.sh outside of that folder, it will still download the playlist
 
 # disclaimers
 
-I did not go to Computer College. I'm more of a tinkerer than a coder. That said, this works for me on youtube-dl version 2020-12-02. The current version as of today (2020-12-13) seems to have changed something with how it handles playlist names in the output, which breaks my getpldir.sh script. The folder names also get named "NA" so I think something might be wonky with playlist title handling in the new version. So for now, this works for sure on version 2020-12-02. YMMV regardless, but it will DEFINITELY vary if you use a different version other than 2020-12-02.
+I did not go to Computer College. I'm more of a tinkerer than a coder. That said, this works for me on youtube-dl version 2020-12-14. 
 
 pretty please don't use this for illegal or nefarious purposes. that wouldn't be very Cash Money of you. please be Cash Money with this script. please only use this script to download content whose copyright you will not be infringing upon by downloading it for offline use.
 
