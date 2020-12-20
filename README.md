@@ -17,7 +17,7 @@ you also need bash
 
 I've only tested this on OS X
 
-YOU NEED TO DOWNLOAD (fancier_ytplist.sh OR fancy_ytplist.sh) AND getpldir.sh!
+YOU NEED TO DOWNLOAD fancier_ytplist.sh AND getpldir.sh!
 
 getpldir.sh is REQUIRED for this to work as intended!
 
