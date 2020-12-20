@@ -4,7 +4,7 @@
 
 # ***NEW! IMPROVED!*** fancier_ytplist.sh is even fancier! input handling! checks for bad URLs! better update.sh handling (checks for existing update.sh in target directory and prompts user on how to proceed)! also includes automagic m3u playlist generation! fancy living!
 
-script for OS X (and Linux too? untested, YMMV) that uses youtube-dl https://github.com/ytdl-org/youtube-dl to download a playlist as audio in its own folder (named after the playlist title), forcing highest quality, and automagically producing an update script to use within the playlist's folder so you can update the content at your leisure. handy if a playlist updates regularly and you want to save the content for offline listening. public domain music and/or lectures and stuff like that.
+script for OS X (and Linux too? untested, YMMV) that uses youtube-dl https://github.com/ytdl-org/youtube-dl to download a playlist as audio in its own folder (named after the playlist title), forcing highest quality, and automagically producing an update script to use within the playlist's folder so you can update the content at your leisure. it'll also make an m3u playlist file so you can plop it into your media player of choice and enjoy - update script creates updated playlists too. handy if a playlist updates regularly and you want to save the content for offline listening. public domain music and/or lectures and stuff like that.
 
 # to use
 **you need youtube-dl** https://github.com/ytdl-org/youtube-dl/
