@@ -31,7 +31,7 @@ save the scripts in the directory you are happy with having subdirectories of pl
 
 make sure the scripts are executable (chmod +x fancy_ytplist.sh; chmod +x getpldir.sh)
 
-run as: ./fancier_ytplist.sh [playlist URL OR ID here]
+run as: ./fancier_ytplist.sh [optional playlist URL OR ID here; it will prompt you otherwise]
 
 you can use the full URL or the playlist ID, it doesn't matter.
 
@@ -55,39 +55,19 @@ if This is a Playlist updates, simply run update.sh within "This\ is\ a\ Playlis
 
 if you run update.sh outside of that folder, it will still download the playlist, but it will be redundant and download everything all over again. which, hey, you do you.
 
-# HOW to use fancy_ytplist (this is old news and lacks the super Cash Money m3u generation magic)
-
-***you need both fancyytplist.sh and getpldir.sh!***
-
-you run this from your terminal application. on OS X it's typically Terminal.app.
-
-save the script in the directory you are happy with having subdirectories of playlists' content. e.g. "~/Youtube\ Playlists/"
-
-make sure the scripts are executable (chmod +x fancy_ytplist.sh; chmod +x getpldir.sh)
-
-run as: ./fancy_ytplist.sh [playlist URL OR ID here]
-
-you can use the full URL or the playlist ID, it doesn't matter.
-
-IN THE FOLDER where all the audio gets downloaded, you will have an update.sh script produced automagically. it will also (hoepfully) automagically be executable. if you want to update (i.e. your playlist of choice gets new content), just run that script as-is (./update.sh) from within the playlist's folder, and it'll download any new content, skipping already-downloaded content. the playlist ID/URL is hard-coded into the script so it will ideally be good to go out-of-the-box.
-
-e.g.
-
-let's say you run this script within "~/Youtube\ Playlists/" for a playlist titled "This is a Playlist"
-
-a folder titled "This\ is\ a\ Playlist/" will be created within "~/Youtube\ Playlists/" and populated with the contents of said playlist, indexed by position in the playlist. so #1 on the list would be 01 - [insert title here], #1 would be 02 - [insert title here] and so on. the files will be .webm, but if you know youtube-dl you can change the format.
-
-an update.sh script will also populate that folder
-
-if This is a Playlist updates, simply run update.sh within "This\ is\ a\ Playlist/" to update the content of your "This\ is\ a\ Playlist/" folder.
-
-if you run update.sh outside of that folder, it will still download the playlist, but it will be redundant and download everything all over again. which, hey, you do you.
-
 # disclaimers
 
 I did not go to Computer College. I'm more of a tinkerer than a coder. That said, this works for me on youtube-dl version 2020-12-14. 
 
 pretty please don't use this for illegal or nefarious purposes. that wouldn't be very Cash Money of you. please be Cash Money with this script. please only use this script to download content whose copyright you will not be infringing upon by downloading it for offline use.
+
+# why?
+
+because I'm really lazy and I wanted this *specific* functionality
+
+# todo
+
+validate youtube URLs. I have the regex pattern from the youtube-dl python code but it doesn't seem to play nicely with bash. or I'm just doing it wrong - very possible.
 
 # special thanks
 
