@@ -4,7 +4,7 @@
 # prompt for desired directory? OR...
 # create a config file that keeps desired directory
 # make this executable from aywhere?
-# regex for YT playlist URLs
+# regex for YT playlist URLS
 # (?:(?:PL|LL|EC|UU|FL|RD|UL|TL|PU|OLAK5uy_)[0-9A-Za-z-_]{10,}|RDMM)
 # validate proper playlist URLs?
 # I cannot get the above regex to play nicely and idk why lol
@@ -16,8 +16,13 @@ playlist_url=$1
 
 while [ -z "$playlist_url" ]
   do
-    echo "Please enter the playlist URL or playlist ID."
+    echo "Please enter the playlist URL or playlist ID, or type "quit" to quit."
     read playlist_url
+    if [ "$playlist_url" == "quit" ]
+      then
+      echo "Bye!"
+      exit 1
+    fi
   done
 
 
@@ -54,7 +59,7 @@ youtube-dl -f ‘bestaudio’ -i -o '%(playlist)s/%(playlist_index)s - %(title)s
 now=$(date "+%Y-%m-%d-%M") #timestamps are cool and good
 cd "$dir" #changing to newly created directory because it's simpler this way
 
-ls | grep -v update.sh | grep -v .m3u >> "$now"_"$plname".m3u #ls piped thru inverse grep works better than plain ls I guess? macOS ships with BSD ls, not GNU ls; no inverse filter with BSD ls.
+ls | grep -v \\.sh | grep -v \\.m3u >> "$now"_"$plname".m3u #ls piped thru inverse grep works better than plain ls I guess? macOS ships with BSD ls, not GNU ls; no inverse filter with BSD ls.
 
 # functionizing the script-o-magic
 
@@ -62,7 +67,7 @@ scriptomagic () {
   echo "#!/bin/bash" >> "$script"
   echo "youtube-dl -f ‘bestaudio’ -i -o '%(playlist_index)s - %(title)s.%(ext)s' $playlist_url" >> "$script"
   echo "now=\$(date \"+%Y-%m-%d-%M\")" >> "$script"
-  echo "ls | grep -v update.sh | grep -v .m3u >> \$now\_\""$plname"\".m3u" >> "$script"
+  echo "ls | grep -v \\\.sh | grep -v \\\.m3u >> \$now\_\""$plname"\".m3u" >> "$script"
   #so now the update script will also build a new playlist with each run
   chmod +x "$script"
   echo "$script has been written in $(pwd). Run $script within $(pwd) to update the files."
