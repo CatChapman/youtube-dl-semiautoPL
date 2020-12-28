@@ -4,7 +4,7 @@
 # prompt for desired directory? OR...
 # create a config file that keeps desired directory
 # make this executable from aywhere?
-# regex for YT playlist URLS
+# regex for YT playlist URLs
 # (?:(?:PL|LL|EC|UU|FL|RD|UL|TL|PU|OLAK5uy_)[0-9A-Za-z-_]{10,}|RDMM)
 # validate proper playlist URLs?
 # I cannot get the above regex to play nicely and idk why lol
@@ -14,14 +14,15 @@ playlist_url=$1
 
 #testing for input; if no input, ask for input
 
-if [ -z "$1" ]
-  then
+while [ -z "$playlist_url" ]
+  do
     echo "Please enter the playlist URL or playlist ID."
     read playlist_url
-    echo "Okay, working..."
-  else
-    echo "Okay, working..."
-fi
+  done
+
+
+echo "Okay, working..."
+
 
 # running youtube-dl in simulation mode to extract playlist name
 
@@ -53,7 +54,19 @@ youtube-dl -f ‘bestaudio’ -i -o '%(playlist)s/%(playlist_index)s - %(title)s
 now=$(date "+%Y-%m-%d-%M") #timestamps are cool and good
 cd "$dir" #changing to newly created directory because it's simpler this way
 
-ls | grep -v .sh | grep -v .m3u >> "$now"_"$plname".m3u #ls piped thru inverse grep works better than plain ls I guess? macOS ships with BSD ls, not GNU ls; no inverse filter with BSD ls.
+ls | grep -v update.sh | grep -v .m3u >> "$now"_"$plname".m3u #ls piped thru inverse grep works better than plain ls I guess? macOS ships with BSD ls, not GNU ls; no inverse filter with BSD ls.
+
+# functionizing the script-o-magic
+
+scriptomagic () {
+  echo "#!/bin/bash" >> "$script"
+  echo "youtube-dl -f ‘bestaudio’ -i -o '%(playlist_index)s - %(title)s.%(ext)s' $playlist_url" >> "$script"
+  echo "now=\$(date \"+%Y-%m-%d-%M\")" >> "$script"
+  echo "ls | grep -v update.sh | grep -v .m3u >> \$now\_\""$plname"\".m3u" >> "$script"
+  #so now the update script will also build a new playlist with each run
+  chmod +x "$script"
+  echo "$script has been written in $(pwd). Run $script within $(pwd) to update the files."
+}
 
 # testing for presence of update.sh, asking how to proceed
 
@@ -63,13 +76,7 @@ if test -f "$script"; then
   select yn in "Yes" "No"; do
     case $yn in
       Yes ) rm $script;
-      echo "#!/bin/bash" >> "$script";
-      echo "youtube-dl -f ‘bestaudio’ -i -o '%(playlist_index)s - %(title)s.%(ext)s' $playlist_url" >> "$script";
-      echo "now=\$(date \"+%Y-%m-%d-%M\")" >> "$script";
-      echo "ls | grep -v .sh | grep -v .m3u >> \$now\_\""$plname"\".m3u" >> "$script";
-      #so now the update script will also build a new playlist with each run
-      chmod +x "$script";
-      echo "$script has been written in $(pwd). Run $script within $(pwd) to update the files.";
+      scriptomagic
       break;;
       No )
       echo "Okay, we are leaving $script alone for this run.";
@@ -78,14 +85,7 @@ if test -f "$script"; then
   done
 
 else
-  echo "#!/bin/bash" >> "$script"
-
-  echo "youtube-dl -f ‘bestaudio’ -i -o '%(playlist_index)s - %(title)s.%(ext)s' $playlist_url" >> "$script"
-  echo "now=\$(date \"+%Y-%m-%d-%M\")" >> "$script"
-  echo "ls | grep -v .sh | grep -v .m3u >> \$now\_\""$plname"\".m3u" >> "$script"
-  #so now the update script will also build a new playlist with each run
-  chmod +x "$script"
-  echo "$script has been written in $(pwd). Run $script within $(pwd) to update the files."
+  scriptomagic
 fi
 
 # this is probably sloppy but I didn't go to computer college, sorry :)
