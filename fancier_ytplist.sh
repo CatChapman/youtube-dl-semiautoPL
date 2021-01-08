@@ -31,7 +31,10 @@ echo "Okay, working..."
 
 # running youtube-dl in simulation mode to extract playlist name
 
-youtube-dl -s $playlist_url >> tempID.txt #dump output to text file
+# TIL about tee, so now I don't have to run it in simulation mode to get tempID.txt. stonks!! much faster.
+
+youtube-dl -f ‘bestaudio’ -i -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' $playlist_url | tee tempID.txt
+
 
 dir=$(./getpldir.sh) #this script extracts playlist name from the text file
 
@@ -53,7 +56,6 @@ fi
 rm tempID.txt #removing tempID file for cleanliness
 
 
-youtube-dl -f ‘bestaudio’ -i -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' $playlist_url
 
 # staging for m3u playlist generation
 now=$(date "+%Y-%m-%d-%M") #timestamps are cool and good
@@ -62,7 +64,6 @@ cd "$dir" #changing to newly created directory because it's simpler this way
 ls | grep -v \\.sh | grep -v \\.m3u >> "$now"_"$plname".m3u #ls piped thru inverse grep works better than plain ls I guess? macOS ships with BSD ls, not GNU ls; no inverse filter with BSD ls.
 
 # functionizing the script-o-magic
-# this makes the update.sh script
 
 scriptomagic () {
   echo "#!/bin/bash" >> "$script"
