@@ -18,7 +18,7 @@ while [ -z "$playlist_url" ]
   do
     echo "Please enter the playlist URL or playlist ID, or type "quit" to quit."
     read playlist_url
-    if [ "$playlist_url" == "quit" ]
+    if [ "$playlist_url" == "quit" ] || [ "$playlist_url" == "q" ]
       then
       echo "Bye!"
       exit 1
@@ -35,8 +35,16 @@ echo "Okay, working..."
 
 youtube-dl -f ‘bestaudio’ -i -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' $playlist_url | tee tempID.txt
 
+getpldir () { #this function extracts the playlist name from the tempID.txt so the target directory of the same name is known to the script
+  pldir=$(cat tempID.txt | grep "\[download\] Downloading playlist")
+  #extracts a relevant line from tempID.txt
 
-dir=$(./getpldir.sh) #this script extracts playlist name from the text file
+  pldir="${pldir/\[download\]\ Downloading\ playlist\:\ /}"
+  #this removes all the unnecessary stuff to extract the playlist title so the target directory name is known to the script
+  echo $pldir
+}
+
+dir=$(getpldir) #invoking the function to store target dir name in $dir variable
 
 script="update.sh"
 
