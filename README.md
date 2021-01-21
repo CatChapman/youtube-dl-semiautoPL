@@ -4,6 +4,8 @@
 
 # ***NEW! IMPROVED!*** fancier_ytplist.sh is even fancier! input handling! checks for bad URLs! better update.sh handling (checks for existing update.sh in target directory and prompts user on how to proceed)! also includes automagic m3u playlist generation! fancy living!
 
+# getpldir.sh is no longer needed! wow! so much fancy!
+
 script for OS X (and Linux too? untested, YMMV) that uses youtube-dl https://github.com/ytdl-org/youtube-dl to download a playlist as audio in its own folder (named after the playlist title), forcing highest quality, and automagically producing an update script to use within the playlist's folder so you can update the content at your leisure. it'll also make an m3u playlist file so you can plop it into your media player of choice and enjoy - update script creates updated playlists too. handy if a playlist updates regularly and you want to save the content for offline listening. public domain music and/or lectures and stuff like that.
 
 # to use
@@ -17,19 +19,14 @@ you also need bash
 
 I've only tested this on OS X
 
-YOU NEED TO DOWNLOAD fancier_ytplist.sh AND getpldir.sh!
-
-getpldir.sh is REQUIRED for this to work as intended!
 
 # HOW to use fancier_ytplist.sh (***NEW! IMPROVED! SHINY! FANCIER!***)
 
 you run this from your terminal application. on OS X it's typically Terminal.app.
 
-***you need both fancier_ytplist.sh and getpldir.sh!***
-
 save the scripts in the directory you are happy with having subdirectories of playlists' content. e.g. "~/Youtube\ Playlists/"
 
-make sure the scripts are executable (chmod +x fancy_ytplist.sh; chmod +x getpldir.sh)
+make sure the script is executable (chmod +x fancier_ytplist.sh)
 
 run as: ./fancier_ytplist.sh [optional playlist URL OR ID here; it will prompt you otherwise]
 
