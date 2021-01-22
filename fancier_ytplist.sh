@@ -28,9 +28,6 @@ while [ -z "$playlist_url" ]
 
 echo "Okay, working..."
 
-
-# running youtube-dl in simulation mode to extract playlist name
-
 # TIL about tee, so now I don't have to run it in simulation mode to get tempID.txt. stonks!! much faster.
 
 youtube-dl -f ‘bestaudio’ -i -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' $playlist_url | tee tempID.txt
@@ -45,7 +42,6 @@ getpldir () {
   echo $pldir
 }
 
-#dir=$(./getpldir.sh) #this script extracts playlist name from the text file
 
 dir=$(getpldir)
 
