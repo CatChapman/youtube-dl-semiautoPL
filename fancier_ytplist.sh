@@ -107,14 +107,14 @@ else
   scriptomagic
 fi
 
-convert2mp3 () {
+convert2mp3 () { #this function is to be called if ffmpegPresence variable is not null
   echo "It looks like you have ffmpeg installed."
   echo "Would you like to convert .webm files to .mp3? Type \"yes\" or \"y\" to proceed with batch conversion."
   read convert
   if [ "$convert" == "yes" ] || [ "$convert" == "y" ]
     then
       for i in *.webm ; do
-        ffmpeg -i "$i" -acodec libmp3lame "$(basename "${i/.webm}")".mp3
+        ffmpeg -i "$i" -acodec libmp3lame "$(basename "${i/.webm}")".mp3 #loops thru all webm files and converts to mp3
       done
     else
       echo "Bye!"
@@ -122,9 +122,9 @@ convert2mp3 () {
     fi
 }
 
-ffmpegPresence=$(which ffmpeg)
+ffmpegPresence=$(which ffmpeg) #takes result of which ffmpeg and stores in variable
 
-if [ ! -z "$ffmpegPresence" ]
+if [ ! -z "$ffmpegPresence" ] #if variable is NOT null, it proceeds. otherwise, nothing happens.
   then
   convert2mp3
 fi
