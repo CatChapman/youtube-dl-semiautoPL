@@ -8,6 +8,8 @@
 
 script for OS X (and Linux too? untested, YMMV) that uses youtube-dl https://github.com/ytdl-org/youtube-dl to download a playlist as audio in its own folder (named after the playlist title), forcing highest quality, and automagically producing an update script to use within the playlist's folder so you can update the content at your leisure. it'll also make an m3u playlist file so you can plop it into your media player of choice and enjoy - update script creates updated playlists too. handy if a playlist updates regularly and you want to save the content for offline listening. public domain music and/or lectures and stuff like that.
 
+I have added a feature that, if you have ffmpeg installed, will provide the option to convert all downloaded .webm files to .mp3 files, as I had some complaints about the .webm format. (VLC plays .webm fine, for your information! but - adding this functionality was easy enough. I might expand it as right now it exists in a vacuum; this functionality is *not* reflected in update.sh, and is only present in the main script execution)
+
 # to use
 **you need youtube-dl** https://github.com/ytdl-org/youtube-dl/
 
