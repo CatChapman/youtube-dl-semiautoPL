@@ -16,7 +16,7 @@ playlist_url=$1
 
 while [ -z "$playlist_url" ]
   do
-    echo "Please enter the playlist URL or playlist ID, or type "quit" to quit."
+    echo "Please enter the playlist URL or playlist ID, or type \"quit\" to quit."
     read playlist_url
     if [ "$playlist_url" == "quit" ] || [ "$playlist_url" == "q" ]
       then
@@ -35,16 +35,19 @@ echo "Okay, working..."
 
 youtube-dl -f ‘bestaudio’ -i -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' $playlist_url | tee tempID.txt
 
-getpldir () { #this function extracts the playlist name from the tempID.txt so the target directory of the same name is known to the script
+
+getpldir () {
   pldir=$(cat tempID.txt | grep "\[download\] Downloading playlist")
   #extracts a relevant line from tempID.txt
 
   pldir="${pldir/\[download\]\ Downloading\ playlist\:\ /}"
-  #this removes all the unnecessary stuff to extract the playlist title so the target directory name is known to the script
+  #this removes all the unnecessary stuff to extract the playlist title so fancy_ytplist.sh knows where to dump the update.sh script
   echo $pldir
 }
 
-dir=$(getpldir) #invoking the function to store target dir name in $dir variable
+#dir=$(./getpldir.sh) #this script extracts playlist name from the text file
+
+dir=$(getpldir)
 
 script="update.sh"
 
@@ -96,13 +99,36 @@ if test -f "$script"; then
       break;;
       No )
       echo "Okay, we are leaving $script alone for this run.";
-      exit;;
+      break;;
     esac
   done
 
 else
   scriptomagic
 fi
+
+convert2mp3 () {
+  echo "It looks like you have ffmpeg installed."
+  echo "Would you like to convert .webm files to .mp3? Type \"yes\" or \"y\" to proceed with batch conversion."
+  read convert
+  if [ "$convert" == "yes" ] || [ "$convert" == "y" ]
+    then
+      for i in *.webm ; do
+        ffmpeg -i "$i" -acodec libmp3lame "$(basename "${i/.webm}")".mp3
+      done
+    else
+      echo "Bye!"
+      exit 1
+    fi
+}
+
+ffmpegPresence=$(which ffmpeg)
+
+if [ ! -z "$ffmpegPresence" ]
+  then
+  convert2mp3
+fi
+
 
 # this is probably sloppy but I didn't go to computer college, sorry :)
 
