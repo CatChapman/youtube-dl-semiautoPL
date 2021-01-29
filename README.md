@@ -68,6 +68,12 @@ because I'm really lazy and I wanted this *specific* functionality
 
 validate youtube URLs. I have the regex pattern from the youtube-dl python code but it doesn't seem to play nicely with bash. or I'm just doing it wrong - very possible.
 
+# what's this testing foler?! que?!
+
+experimental stuff that is too messy (even for my standards) to commit to the main script goes into the test script that lives in the testing folder. use at even more of your own risk than the regular script.
+
+currently there's playlist generation for the files converted into mp3. because, idk, seemed easy enough to do.
+
 # special thanks
 
 shoutouts to G for helping with isolating the playlist name and subsequently the approrpiate directory name for the update.sh script. you are Very Cash Money and this script would not work without your Cash Money ways.
