@@ -109,9 +109,11 @@ convert2mp3 () { #this function is to be called if ffmpegPresence variable is no
   read convert
   if [ "$convert" == "yes" ] || [ "$convert" == "y" ]
     then
+      mkdir mp3
       for i in *.webm ; do
-        ffmpeg -i "$i" -acodec libmp3lame "$(basename "${i/.webm}")".mp3 #loops thru all webm files and converts to mp3
+        ffmpeg -i "$i" -acodec libmp3lame "mp3/$(basename "${i/.webm}")".mp3 #loops thru all webm files and converts to mp3
       done
+      echo "Okay, webm files have been converted to mp3. You can see them in $(pwd)/mp3/."
     else
       echo "Bye!"
       exit 1
