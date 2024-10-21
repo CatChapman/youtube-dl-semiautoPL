@@ -1,3 +1,5 @@
+# 2024-10-21 update: youtube-dl is dead, long live youtube-dl. I have modified this script to support yt-dlp and it lives in a new repo here. https://github.com/CatChapman/ytplist
+
 # youtube-dl-semiautoPL AKA fancier_ytplist.sh
 
 ### as of 2020-12-18, youtube-dl version 2020-12-14 seems to work with this script once again. huzzah!
